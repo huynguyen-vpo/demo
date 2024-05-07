@@ -1,0 +1,11 @@
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+extend type Mutation {
+    askBotQuestion(content: String!): Message! @field(
+        resolver: "App\\GraphQL\\Mutations\\AskBotQuestion"
+    )
+}
+
+type Message {
+    message: String!
+}
